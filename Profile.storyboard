@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xJE-RJ-PWq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="Yiq-B3-JW9">
+            <objects>
+                <viewController title="Profile" id="xJE-RJ-PWq" customClass="ProfileViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dOS-6Y-tx1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M21-ln-Xax">
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ui8-yd-DOj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="988"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6og-GK-YaU">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <textAttributes key="titleTextAttributes">
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </textAttributes>
+                                                <items>
+                                                    <navigationItem title="Profile" id="hIG-AL-YsY"/>
+                                                </items>
+                                            </navigationBar>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-ze-cGb" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="112" y="80" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg4-ML-7Bq">
+                                                <rect key="frame" x="182" y="241" width="131" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date of Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOE-0s-dNs">
+                                                <rect key="frame" x="117" y="272" width="141" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Badge Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZf-Lp-fr3">
+                                                <rect key="frame" x="129" y="304" width="116" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-8g-ECX">
+                                                <rect key="frame" x="40" y="353" width="298" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <color key="textColor" red="0.67488908767700195" green="0.73256927728652954" blue="0.7725566029548645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGj-Us-opQ">
+                                                <rect key="frame" x="66" y="239" width="108" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="QA5-Yh-vf9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ui8-yd-DOj" secondAttribute="bottom" id="2KK-xY-QSQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ui8-yd-DOj" secondAttribute="trailing" id="4Vg-gH-CBO"/>
+                                    <constraint firstItem="ui8-yd-DOj" firstAttribute="top" secondItem="M21-ln-Xax" secondAttribute="top" id="FxF-PX-btd"/>
+                                    <constraint firstItem="ui8-yd-DOj" firstAttribute="leading" secondItem="M21-ln-Xax" secondAttribute="leading" id="abf-iW-2Mt"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="M21-ln-Xax" firstAttribute="trailing" secondItem="kIW-Fp-Jgz" secondAttribute="trailing" id="2k7-9F-KCg"/>
+                            <constraint firstItem="M21-ln-Xax" firstAttribute="bottom" secondItem="kIW-Fp-Jgz" secondAttribute="bottom" id="8Dy-9l-zXs"/>
+                            <constraint firstItem="M21-ln-Xax" firstAttribute="leading" secondItem="kIW-Fp-Jgz" secondAttribute="leading" id="O5O-yh-bhG"/>
+                            <constraint firstItem="M21-ln-Xax" firstAttribute="top" secondItem="kIW-Fp-Jgz" secondAttribute="top" id="S6U-FA-y0G"/>
+                            <constraint firstItem="ui8-yd-DOj" firstAttribute="width" secondItem="dOS-6Y-tx1" secondAttribute="width" id="oRd-wc-Y4a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kIW-Fp-Jgz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="Zbe-Ap-ktB"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="ProfilePic" destination="OfX-ze-cGb" id="CXA-D6-Pm2"/>
+                        <outlet property="badgeLabel" destination="rZf-Lp-fr3" id="ZPs-jp-M4Q"/>
+                        <outlet property="datebirthdayLabel" destination="yOE-0s-dNs" id="PZJ-hy-cyg"/>
+                        <outlet property="nameLabel" destination="tGj-Us-opQ" id="5jk-bN-PT0"/>
+                        <outlet property="personalTime" destination="8gN-8g-ECX" id="B0d-7s-XPd"/>
+                        <outlet property="surnameLabel" destination="vg4-ML-7Bq" id="2T0-nZ-4n2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bih-GM-LIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-938.39999999999998" y="-1457.2713643178413"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dummyProfilePic" width="140" height="140"/>
+    </resources>
+</document>
