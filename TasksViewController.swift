@@ -15,7 +15,6 @@ class OnGoingTaskCell: UITableViewCell {
     @IBOutlet weak var skillRequestedLabel: UILabel!
     @IBOutlet weak var timeRequestedLabel: UILabel!
     @IBOutlet weak var timeLeftLabel: UILabel!
-    @IBOutlet weak var animationImageView: UIImageView!
     
 }
 
@@ -48,7 +47,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var timeRequestedB = ["20", "90", "90", "30", "30", "10"]
     var timeLeftB = ["288", "500", "100", "39", "0", "10"]
     
-    let tableSections = ["On Going", "Old" ]
+    let tableSections = ["Tasks in progress", "Ended Tasks" ]
 
 
     override func viewDidLoad()
@@ -105,15 +104,15 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesA[indexPath.row]
                 cell.skillRequestedLabel?.text = skillsA[indexPath.row]
                 cell.timeRequestedLabel?.text = "(" + timeRequestedA[indexPath.row] + " minutes)"
-                cell.timeLeftLabel?.text = timeLeftA[indexPath.row]
+                cell.timeLeftLabel?.text = "72:00:00"
                 
                 //cell.nameSurnameLabel?.sizeToFit()
                 cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
                 cell.skillRequestedLabel?.sizeToFit()
                 cell.timeRequestedLabel?.sizeToFit()
-                cell.timeLeftLabel?.sizeToFit()
+                cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
                
-                onGoingCellAnimation(imageView: cell.animationImageView!)
+               
                 
                 
                 return cell
@@ -143,15 +142,15 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
                 cell.skillRequestedLabel?.text = skillsB[indexPath.row]
                 cell.timeRequestedLabel?.text = "(" + timeRequestedB[indexPath.row] + " minutes)"
-                cell.timeLeftLabel?.text = timeLeftB[indexPath.row]
+                cell.timeLeftLabel?.text = "72:00:00"
                 
                 //cell.nameSurnameLabel?.sizeToFit()
                 cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
                 cell.skillRequestedLabel?.sizeToFit()
                 cell.timeRequestedLabel?.sizeToFit()
-                cell.timeLeftLabel?.sizeToFit()
+                cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
                 
-                onGoingCellAnimation(imageView: cell.animationImageView!)
+               
 
                 
                 return cell
@@ -190,16 +189,39 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    //Custom Animation Function on UIImageView
-    func onGoingCellAnimation(imageView: UIImageView) {
+    //tablerow actions on swipe
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let loadingImagesAnimation: [UIImage] = [#imageLiteral(resourceName: "loading-0"),#imageLiteral(resourceName: "loading-1"),#imageLiteral(resourceName: "loading-2"),#imageLiteral(resourceName: "loading-3"),#imageLiteral(resourceName: "loading-4"),#imageLiteral(resourceName: "loading-5"),#imageLiteral(resourceName: "loading-6"),#imageLiteral(resourceName: "loading-7"),#imageLiteral(resourceName: "loading-8")]
+        if indexPath.section == 0 && segmentedControl.selectedSegmentIndex == 1 {
+            
+            
+            
+            
+            let endTaskAction = UIContextualAction(style: .normal, title:  "End Task", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                //
+                success(true)
+            })
+           
+            endTaskAction.backgroundColor = UIColor(red:0.31, green:0.82, blue:0.30, alpha:1.0)
+            
+            let chatAction = UIContextualAction(style: .normal, title:  "Chat", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                //
+                
+                success(true)
+            })
         
-        imageView.animationImages = loadingImagesAnimation
-        imageView.animationDuration = 0.8
-        imageView.animationRepeatCount = 0
-        imageView.startAnimating()
+            chatAction.backgroundColor = UIColor(red:0.75, green:0.75, blue:0.75, alpha:1.0)
+            
+            
+            return UISwipeActionsConfiguration(actions: [chatAction, endTaskAction])
+            
+        }
+        
+         return UISwipeActionsConfiguration(actions: [])
     }
+    
+    
+    //Custom Animation Function on UIImageView
     
     
     //TableView Custom Header
